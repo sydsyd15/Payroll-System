@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" >
+    <title>Settings</title>
+    <style>
+        /* Reset some basic elements */
+        body, h1, h2, p, ul, form, input, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-size: 18px;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background-color: #34495e;
+        }
+
+        /* Main content area */
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: calc(100% - 270px);
+        }
+
+        .content h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .content form {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .content form input,
+        .content form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #34495e;
+        }
+
+        .content form .btn-primary {
+            background-color: #2980b9;
+            color: #ecf0f1;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .content form .btn-primary:hover {
+            background-color: #3498db;
+        }
+
+        /* Notifications list */
+        #notification-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #notification-list li {
+            background-color: #f7f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .content {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+
+        /* User profile container */
+        .user-profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="user-profile-container">
+            <h1 class="employee-profile-pic">
+                <img src="aiah.jpg" alt="Employee Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+            </h1>
+            <h2>Employee Name</h2>
+            <h3>employee-ID</h3>
+        </div>
+        <ul>
+            <li><a href="user.html"><i class="fa-solid fa-house" style="margin-right: 8px;"></i>Home</a></li>
+            <li><a href="payslips.html"><i class="fa-solid fa-file-invoice-dollar" style="margin-right: 8px;"></i>Paysilps</a></li>
+            <li><a href="settings.html"><i class="fa-solid fa-gears" style="margin-right: 8px;"></i>Settings</a></li>
+            <li><a href="employees.html"><i class="fa-solid fa-flag" style="margin-right: 8px;"></i>Reports</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Settings</h1>
+        
+        <div class="settings-container">
+            <!-- Account Information -->
+            <section>
+                <h2>Account Information</h2>
+                <form>
+                    <label for="profile-pic">Profile Picture:</label>
+                    <input type="file" id="profile-pic">
+
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" value="CurrentUsername">
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" value="user@example.com">
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password">
+
+                    <button type="submit" class="btn-primary">Save Changes</button>
+                </form>
+            </section>
+            
+            <!-- Privacy Settings -->
+            <section>
+                <h2>Privacy Settings</h2>
+                <form>
+                    <label><input type="checkbox" id="two-factor"> Enable Two-Factor Authentication</label>
+                </form>
+            </section>
+            
+            <!-- Notification Settings -->
+            <section>
+                <h2>Notification Settings</h2>
+                <form>
+                    <label><input type="checkbox" id="email-notifications"> Receive email notifications</label>
+                    <label><input type="checkbox" id="push-notifications"> Receive push notifications</label>
+                </form>
+            </section>
+            
+            <!-- Display Settings -->
+            <section>
+                <h2>Display Settings</h2>
+                <form>
+                    <label for="theme">Theme:</label>
+                    <select id="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+
+                    <label for="font-size">Font Size:</label>
+                    <select id="font-size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </form>
+            </section>
+            
+            <!-- Language Preferences -->
+            <section>
+                <h2>Language Preferences</h2>
+                <form>
+                    <label for="language">Language:</label>
+                    <select id="language">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <!-- Add more languages as needed -->
+                    </select>
+                </form>
+            </section>
+            
+            <!-- Help and Support -->
+            <section>
+                <h2>Help and Support</h2>
+                <p><a href="support.html">Contact Support</a></p>
+                <p><a href="faq.html">FAQs</a></p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
